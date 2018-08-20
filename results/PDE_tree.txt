@@ -1,0 +1,168 @@
+•
+├── careTeam (1..1)
+│   ├── provider (1..1)
+│   │   └── identifier (1..1)
+│   │       ├── system (1..1)
+│   │       │   └── possible values:
+│   │       │       └── http://hl7.org/fhir/sid/us-npi
+│   │       └── value (1..1)
+│   ├── role (1..1)
+│   │   └── coding (1..1)
+│   │       ├── code (1..1)
+│   │       │   └── possible values:
+│   │       │       └── primary
+│   │       ├── display (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── http://hl7.org/fhir/claimcareteamrole
+│   └── sequence (1..1)
+├── facility (1..1)
+│   ├── extension (1..1)
+│   │   ├── url (1..1)
+│   │   │   └── possible values:
+│   │   │       └── https://bluebutton.cms.gov/resources/variables/phrmcy_srvc_type_cd
+│   │   └── valueCoding (1..1)
+│   │       ├── code (0..1)
+│   │       ├── display (0..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── https://bluebutton.cms.gov/resources/variables/phrmcy_srvc_type_cd
+│   └── identifier (1..1)
+│       ├── system (1..1)
+│       │   └── possible values:
+│       │       └── http://hl7.org/fhir/sid/us-npi
+│       └── value (1..1)
+├── id (1..1)
+├── identifier (3..3)
+│   ├── system (1..1)
+│   │   └── possible values:
+│   │       ├── https://bluebutton.cms.gov/resources/variables/pde_id
+│   │       ├── https://bluebutton.cms.gov/resources/identifier/claim-group
+│   │       └── https://bluebutton.cms.gov/resources/variables/rx_srvc_rfrnc_num
+│   └── value (1..1)
+├── information (5..9)
+│   ├── category (1..1)
+│   │   └── coding (1..1)
+│   │       ├── code (1..1)
+│   │       │   └── possible values:
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/daw_prod_slctn_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/dspnsng_stus_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/drug_cvrg_stus_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/rx_orgn_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/brnd_gnrc_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/phrmcy_srvc_type_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/ptnt_rsdnc_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/submsn_clr_cd
+│   │       │       └── https://bluebutton.cms.gov/resources/variables/ctstrphc_cvrg_cd
+│   │       ├── display (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── https://bluebutton.cms.gov/resources/codesystem/information
+│   ├── code (1..1)
+│   │   └── coding (1..1)
+│   │       ├── code (0..1)
+│   │       ├── display (0..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               ├── https://bluebutton.cms.gov/resources/variables/daw_prod_slctn_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/dspnsng_stus_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/drug_cvrg_stus_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/rx_orgn_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/brnd_gnrc_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/phrmcy_srvc_type_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/ptnt_rsdnc_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/submsn_clr_cd
+│   │               └── https://bluebutton.cms.gov/resources/variables/ctstrphc_cvrg_cd
+│   └── sequence (1..1)
+├── insurance (1..1)
+│   └── coverage (1..1)
+│       ├── extension (2..2)
+│       │   ├── url (1..1)
+│       │   │   └── possible values:
+│       │   │       ├── https://bluebutton.cms.gov/resources/variables/plan_cntrct_rec_id
+│       │   │       └── https://bluebutton.cms.gov/resources/variables/plan_pbp_rec_num
+│       │   └── valueIdentifier (1..1)
+│       │       ├── system (1..1)
+│       │       │   └── possible values:
+│       │       │       ├── https://bluebutton.cms.gov/resources/variables/plan_cntrct_rec_id
+│       │       │       └── https://bluebutton.cms.gov/resources/variables/plan_pbp_rec_num
+│       │       └── value (1..1)
+│       └── reference (1..1)
+├── item (1..1)
+│   ├── adjudication (9..9)
+│   │   ├── amount (1..1)
+│   │   │   ├── code (1..1)
+│   │   │   ├── system (1..1)
+│   │   │   │   └── possible values:
+│   │   │   │       └── urn:iso:std:iso:4217
+│   │   │   └── value (1..1)
+│   │   ├── category (1..1)
+│   │   │   └── coding (1..1)
+│   │   │       ├── code (1..1)
+│   │   │       │   └── possible values:
+│   │   │       │       ├── https://bluebutton.cms.gov/resources/variables/cvrd_d_plan_pd_amt
+│   │   │       │       ├── https://bluebutton.cms.gov/resources/variables/gdc_blw_oopt_amt
+│   │   │       │       ├── https://bluebutton.cms.gov/resources/variables/gdc_abv_oopt_amt
+│   │   │       │       ├── https://bluebutton.cms.gov/resources/variables/ptnt_pay_amt
+│   │   │       │       ├── https://bluebutton.cms.gov/resources/variables/othr_troop_amt
+│   │   │       │       ├── https://bluebutton.cms.gov/resources/variables/lics_amt
+│   │   │       │       ├── https://bluebutton.cms.gov/resources/variables/plro_amt
+│   │   │       │       ├── https://bluebutton.cms.gov/resources/variables/tot_rx_cst_amt
+│   │   │       │       └── https://bluebutton.cms.gov/resources/variables/rptd_gap_dscnt_num
+│   │   │       ├── display (1..1)
+│   │   │       └── system (1..1)
+│   │   │           └── possible values:
+│   │   │               └── https://bluebutton.cms.gov/resources/codesystem/adjudication
+│   │   └── reason (0..1)
+│   │       └── coding (1..1)
+│   │           ├── code (1..1)
+│   │           ├── display (1..1)
+│   │           └── system (1..1)
+│   │               └── possible values:
+│   │                   └── https://bluebutton.cms.gov/resources/variables/drug_cvrg_stus_cd
+│   ├── careTeamLinkId (1..1)
+│   ├── detail (0..1)
+│   │   └── type (1..1)
+│   │       └── coding (1..1)
+│   │           ├── code (1..1)
+│   │           ├── display (1..1)
+│   │           └── system (1..1)
+│   │               └── possible values:
+│   │                   └── http://hl7.org/fhir/v3/ActCode
+│   ├── quantity (1..1)
+│   │   ├── extension (2..2)
+│   │   │   ├── url (1..1)
+│   │   │   │   └── possible values:
+│   │   │   │       ├── https://bluebutton.cms.gov/resources/variables/fill_num
+│   │   │   │       └── https://bluebutton.cms.gov/resources/variables/days_suply_num
+│   │   │   └── valueQuantity (1..1)
+│   │   │       └── value (1..1)
+│   │   └── value (1..1)
+│   ├── sequence (1..1)
+│   ├── service (1..1)
+│   │   └── coding (1..1)
+│   │       ├── code (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── http://hl7.org/fhir/sid/ndc
+│   └── servicedDate (1..1)
+├── organization (1..1)
+│   └── identifier (1..1)
+│       ├── system (1..1)
+│       │   └── possible values:
+│       │       └── http://hl7.org/fhir/sid/us-npi
+│       └── value (1..1)
+├── patient (1..1)
+│   └── reference (1..1)
+├── payment (0..1)
+│   └── date (1..1)
+├── resourceType (1..1)
+├── status (1..1)
+└── type (1..1)
+    └── coding (2..2)
+        ├── code (1..1)
+        ├── display (0..1)
+        └── system (1..1)
+            └── possible values:
+                ├── https://bluebutton.cms.gov/resources/codesystem/eob-type
+                └── http://hl7.org/fhir/ex-claimtype

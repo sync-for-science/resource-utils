@@ -1,0 +1,307 @@
+•
+├── benefitBalance (1..1)
+│   ├── category (1..1)
+│   │   └── coding (1..1)
+│   │       ├── code (1..1)
+│   │       │   └── possible values:
+│   │       │       └── medical
+│   │       ├── display (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── http://hl7.org/fhir/benefit-category
+│   └── financial (3..3)
+│       ├── type (1..1)
+│       │   └── coding (1..1)
+│       │       ├── code (1..1)
+│       │       │   └── possible values:
+│       │       │       ├── https://bluebutton.cms.gov/resources/variables/bene_tot_coinsrnc_days_cnt
+│       │       │       ├── https://bluebutton.cms.gov/resources/variables/clm_non_utlztn_days_cnt
+│       │       │       └── https://bluebutton.cms.gov/resources/variables/clm_utlztn_day_cnt
+│       │       ├── display (1..1)
+│       │       └── system (1..1)
+│       │           └── possible values:
+│       │               └── https://bluebutton.cms.gov/resources/codesystem/benefit-balance
+│       └── usedUnsignedInt (1..1)
+├── billablePeriod (1..1)
+│   ├── end (1..1)
+│   ├── extension (1..1)
+│   │   ├── url (1..1)
+│   │   │   └── possible values:
+│   │   │       └── https://bluebutton.cms.gov/resources/variables/claim_query_cd
+│   │   └── valueCoding (1..1)
+│   │       ├── code (1..1)
+│   │       ├── display (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── https://bluebutton.cms.gov/resources/variables/claim_query_cd
+│   └── start (1..1)
+├── careTeam (0..1)
+│   ├── provider (1..1)
+│   │   └── identifier (1..1)
+│   │       ├── system (1..1)
+│   │       │   └── possible values:
+│   │       │       └── http://hl7.org/fhir/sid/us-npi
+│   │       └── value (1..1)
+│   ├── role (1..1)
+│   │   └── coding (1..1)
+│   │       ├── code (1..1)
+│   │       │   └── possible values:
+│   │       │       ├── assist
+│   │       │       └── primary
+│   │       ├── display (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── http://hl7.org/fhir/claimcareteamrole
+│   └── sequence (1..1)
+├── diagnosis (2..27)
+│   ├── diagnosisCodeableConcept (0..1)
+│   │   └── coding (1..1)
+│   │       ├── code (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── http://hl7.org/fhir/sid/icd-9-cm
+│   ├── extension (0..1)
+│   │   ├── url (1..1)
+│   │   │   └── possible values:
+│   │   │       └── https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1
+│   │   └── valueCoding (1..1)
+│   │       ├── code (1..1)
+│   │       ├── display (0..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── https://bluebutton.cms.gov/resources/variables/clm_poa_ind_sw1
+│   ├── packageCode (0..1)
+│   │   └── coding (1..1)
+│   │       ├── code (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── https://bluebutton.cms.gov/resources/variables/clm_drg_cd
+│   ├── sequence (0..1)
+│   └── type (0..1)
+│       └── coding (1..1)
+│           ├── code (1..1)
+│           │   └── possible values:
+│           │       ├── admitting
+│           │       └── principal
+│           ├── display (1..1)
+│           └── system (1..1)
+│               └── possible values:
+│                   └── https://bluebutton.cms.gov/resources/codesystem/diagnosis-type
+├── extension (17..19)
+│   ├── url (1..1)
+│   │   └── possible values:
+│   │       ├── https://bluebutton.cms.gov/resources/variables/ime_op_clm_val_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/dsh_op_clm_val_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/clm_pass_thru_per_diem_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/nch_profnl_cmpnt_chrg_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/clm_tot_pps_cptl_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/nch_bene_ip_ddctbl_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/nch_bene_pta_coinsrnc_lblty_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/nch_ip_ncvrd_chrg_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/nch_ip_tot_ddctn_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/clm_pps_cptl_dsprprtnt_shr_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/clm_pps_cptl_excptn_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/clm_pps_cptl_fsp_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/clm_pps_cptl_ime_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/clm_pps_cptl_outlier_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/clm_pps_old_cptl_hld_hrmls_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/nch_drg_outlier_aprvd_pmt_amt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/nch_bene_blood_ddctbl_lblty_am
+│   │       ├── https://bluebutton.cms.gov/resources/variables/prpayamt
+│   │       ├── https://bluebutton.cms.gov/resources/variables/fi_num
+│   │       └── https://bluebutton.cms.gov/resources/variables/clm_mdcr_non_pmt_rsn_cd
+│   ├── valueCoding (0..1)
+│   │   ├── code (1..1)
+│   │   ├── display (1..1)
+│   │   └── system (1..1)
+│   │       └── possible values:
+│   │           └── https://bluebutton.cms.gov/resources/variables/clm_mdcr_non_pmt_rsn_cd
+│   ├── valueIdentifier (0..1)
+│   │   ├── system (1..1)
+│   │   │   └── possible values:
+│   │   │       └── https://bluebutton.cms.gov/resources/variables/fi_num
+│   │   └── value (1..1)
+│   └── valueMoney (0..1)
+│       ├── code (1..1)
+│       ├── system (1..1)
+│       │   └── possible values:
+│       │       └── urn:iso:std:iso:4217
+│       └── value (1..1)
+├── facility (1..1)
+│   ├── extension (1..1)
+│   │   ├── url (1..1)
+│   │   │   └── possible values:
+│   │   │       └── https://bluebutton.cms.gov/resources/variables/clm_fac_type_cd
+│   │   └── valueCoding (1..1)
+│   │       ├── code (1..1)
+│   │       ├── display (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── https://bluebutton.cms.gov/resources/variables/clm_fac_type_cd
+│   └── identifier (0..1)
+│       ├── system (1..1)
+│       │   └── possible values:
+│       │       └── http://hl7.org/fhir/sid/us-npi
+│       └── value (1..1)
+├── hospitalization (1..1)
+│   ├── end (0..1)
+│   └── start (1..1)
+├── id (1..1)
+├── identifier (2..2)
+│   ├── system (1..1)
+│   │   └── possible values:
+│   │       ├── https://bluebutton.cms.gov/resources/variables/clm_id
+│   │       └── https://bluebutton.cms.gov/resources/identifier/claim-group
+│   └── value (1..1)
+├── information (6..8)
+│   ├── category (1..1)
+│   │   └── coding (1..1)
+│   │       ├── code (1..1)
+│   │       │   └── possible values:
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/nch_ptnt_stus_ind_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/clm_ip_admsn_type_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/clm_src_ip_admsn_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/nch_blood_pnts_frnshd_qty
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/clm_freq_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/ptnt_dschrg_stus_cd
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/clm_mco_pd_sw
+│   │       │       ├── https://bluebutton.cms.gov/resources/variables/nch_vrfd_ncvrd_stay_from_dt
+│   │       │       └── https://bluebutton.cms.gov/resources/variables/nch_actv_or_cvrd_lvl_care_thru
+│   │       ├── display (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── https://bluebutton.cms.gov/resources/codesystem/information
+│   ├── code (0..1)
+│   │   └── coding (1..1)
+│   │       ├── code (1..1)
+│   │       ├── display (0..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               ├── https://bluebutton.cms.gov/resources/variables/nch_ptnt_stus_ind_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/clm_ip_admsn_type_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/clm_src_ip_admsn_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/clm_freq_cd
+│   │               ├── https://bluebutton.cms.gov/resources/variables/ptnt_dschrg_stus_cd
+│   │               └── https://bluebutton.cms.gov/resources/variables/clm_mco_pd_sw
+│   ├── sequence (1..1)
+│   ├── timingDate (0..1)
+│   ├── timingPeriod (0..1)
+│   │   ├── end (1..1)
+│   │   └── start (1..1)
+│   └── valueQuantity (0..1)
+│       ├── code (1..1)
+│       ├── system (1..1)
+│       │   └── possible values:
+│       │       └── http://unitsofmeasure.org
+│       ├── unit (1..1)
+│       └── value (1..1)
+├── insurance (1..1)
+│   └── coverage (1..1)
+│       └── reference (1..1)
+├── item (2..35)
+│   ├── adjudication (3..3)
+│   │   ├── amount (1..1)
+│   │   │   ├── code (1..1)
+│   │   │   ├── system (1..1)
+│   │   │   │   └── possible values:
+│   │   │   │       └── urn:iso:std:iso:4217
+│   │   │   └── value (1..1)
+│   │   └── category (1..1)
+│   │       └── coding (1..1)
+│   │           ├── code (1..1)
+│   │           │   └── possible values:
+│   │           │       ├── https://bluebutton.cms.gov/resources/variables/rev_cntr_rate_amt
+│   │           │       ├── https://bluebutton.cms.gov/resources/variables/rev_cntr_tot_chrg_amt
+│   │           │       └── https://bluebutton.cms.gov/resources/variables/rev_cntr_ncvrd_chrg_amt
+│   │           ├── display (1..1)
+│   │           └── system (1..1)
+│   │               └── possible values:
+│   │                   └── https://bluebutton.cms.gov/resources/codesystem/adjudication
+│   ├── extension (0..1)
+│   │   ├── url (1..1)
+│   │   │   └── possible values:
+│   │   │       └── https://bluebutton.cms.gov/resources/variables/rev_cntr_ndc_qty
+│   │   └── valueQuantity (1..1)
+│   │       ├── code (1..1)
+│   │       ├── system (1..1)
+│   │       │   └── possible values:
+│   │       │       └── https://bluebutton.cms.gov/resources/variables/rev_cntr_ndc_qty_qlfr_cd
+│   │       ├── unit (1..1)
+│   │       └── value (1..1)
+│   ├── locationAddress (1..1)
+│   │   └── state (1..1)
+│   ├── quantity (1..1)
+│   │   └── value (1..1)
+│   ├── revenue (1..1)
+│   │   ├── coding (1..1)
+│   │   │   ├── code (1..1)
+│   │   │   ├── display (0..1)
+│   │   │   └── system (1..1)
+│   │   │       └── possible values:
+│   │   │           └── https://bluebutton.cms.gov/resources/variables/rev_cntr
+│   │   └── extension (0..1)
+│   │       ├── url (1..1)
+│   │       │   └── possible values:
+│   │       │       └── https://bluebutton.cms.gov/resources/variables/rev_cntr_ddctbl_coinsrnc_cd
+│   │       └── valueCoding (1..1)
+│   │           ├── code (1..1)
+│   │           ├── display (1..1)
+│   │           └── system (1..1)
+│   │               └── possible values:
+│   │                   └── https://bluebutton.cms.gov/resources/variables/rev_cntr_ddctbl_coinsrnc_cd
+│   ├── sequence (1..1)
+│   └── service (0..1)
+│       └── coding (1..1)
+│           ├── code (1..1)
+│           └── system (1..1)
+│               └── possible values:
+│                   └── https://bluebutton.cms.gov/resources/codesystem/hcpcs
+├── organization (0..1)
+│   └── identifier (1..1)
+│       ├── system (1..1)
+│       │   └── possible values:
+│       │       └── http://hl7.org/fhir/sid/us-npi
+│       └── value (1..1)
+├── patient (1..1)
+│   └── reference (1..1)
+├── payment (1..1)
+│   └── amount (1..1)
+│       ├── code (1..1)
+│       ├── system (1..1)
+│       │   └── possible values:
+│       │       └── urn:iso:std:iso:4217
+│       └── value (1..1)
+├── procedure (0..9)
+│   ├── date (0..1)
+│   ├── procedureCodeableConcept (1..1)
+│   │   └── coding (1..1)
+│   │       ├── code (1..1)
+│   │       └── system (1..1)
+│   │           └── possible values:
+│   │               └── http://hl7.org/fhir/sid/icd-9-cm
+│   └── sequence (1..1)
+├── provider (1..1)
+│   └── identifier (1..1)
+│       ├── system (1..1)
+│       │   └── possible values:
+│       │       └── https://bluebutton.cms.gov/resources/variables/prvdr_num
+│       └── value (1..1)
+├── resourceType (1..1)
+├── status (1..1)
+├── totalCost (1..1)
+│   ├── code (1..1)
+│   ├── system (1..1)
+│   │   └── possible values:
+│   │       └── urn:iso:std:iso:4217
+│   └── value (1..1)
+└── type (1..1)
+    └── coding (5..5)
+        ├── code (1..1)
+        ├── display (0..1)
+        └── system (1..1)
+            └── possible values:
+                ├── https://bluebutton.cms.gov/resources/variables/nch_clm_type_cd
+                ├── https://bluebutton.cms.gov/resources/codesystem/eob-type
+                ├── http://hl7.org/fhir/ex-claimtype
+                ├── https://bluebutton.cms.gov/resources/variables/nch_near_line_rec_ident_cd
+                └── https://bluebutton.cms.gov/resources/variables/clm_srvc_clsfctn_type_cd

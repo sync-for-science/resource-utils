@@ -57,3 +57,23 @@ To see all encountered `url` *values* in `extension` elements of the base resour
      - https://bluebutton.cms.gov/resources/variables/clm_mdcr_non_pmt_rsn_cd (78)
      - https://bluebutton.cms.gov/resources/variables/dsh_op_clm_val_amt (2869)
      - https://bluebutton.cms.gov/resources/variables/ime_op_clm_val_amt (2104)
+
+
+### tree.py
+
+Performs larger-scale analysis of the structure within multiple packs of resources. The result is a JSON tree structure with statistics for each property stratified by profile, with along unique (scalar) values of `system`, `code`, and `url`. See [summary.json](results/summary.json) for the output. The script utilizes multiple cores with `multiprocessing`.
+
+
+    $ python tree.py CARRIER INPATIENT PDE > summary.json
+
+
+The `--count` option is useful when debugging to limit how many resources are analyzed per profile type.
+
+
+### extract_profile.py
+
+Processes the output of `tree.py` to produce output for a given profile containing the tree of properties along with observed cardinalities. Observed values of `system`, `code`, and `url` from `tree.py` are output if there are between 1 and 25 of such values to capture common coding systems and extensions. See [CARRIER_profile.txt](results/CARRIER_profile.txt), [PDE_profile.txt](results/PDE_profile.txt) and [INPATIENT_profile.txt](results/INPATIENT_profile.txt) for the output.
+
+    $ cat summary.json | python extract_profile.py CARRIER > CARRIER_profile.txt
+
+The resulting files were manually edited to remove uninteresting collections of values, and then run through [an online unicode tree generator](http://tree-generator.herokuapp.com/) for beautification. The results can be found at [CARRIER_tree.txt](results/CARRIER_tree.txt), [PDE_tree.txt](results/PDE_tree.txt) and [INPATIENT_tree.txt](results/INPATIENT_tree.txt).

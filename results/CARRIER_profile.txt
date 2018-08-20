@@ -1,0 +1,309 @@
+* billablePeriod (1..1)
+  * end (1..1)
+  * start (1..1)
+* careTeam (0..1)
+  * extension (2..26)
+    * url (1..1)
+      * possible values:
+        * https://bluebutton.cms.gov/resources/variables/carr_line_prvdr_type_cd
+        * https://bluebutton.cms.gov/resources/variables/prtcptng_ind_cd
+    * valueCoding (1..1)
+      * code (1..1)
+        * possible values:
+          * 1
+          * 2
+          * 5
+          * 0
+          * 7
+          * 4
+          * 3
+          * 6
+      * display (0..1)
+      * system (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/variables/carr_line_prvdr_type_cd
+          * https://bluebutton.cms.gov/resources/variables/prtcptng_ind_cd
+  * provider (1..1)
+    * identifier (1..1)
+      * system (1..1)
+        * possible values:
+          * http://hl7.org/fhir/sid/us-npi
+      * value (1..1)
+  * qualification (1..1)
+    * coding (1..1)
+      * code (1..1)
+        * possible values:
+          * 999
+      * system (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/variables/prvdr_spclty
+  * responsible (1..1)
+  * role (1..1)
+    * coding (1..1)
+      * code (1..1)
+        * possible values:
+          * primary
+      * display (1..1)
+      * system (1..1)
+        * possible values:
+          * http://hl7.org/fhir/claimcareteamrole
+  * sequence (1..1)
+* contained (0..7)
+  * code (0..1)
+    * coding (1..1)
+      * code (1..1)
+        * possible values:
+          * 99
+      * system (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/variables/line_hct_hgb_type_cd
+  * id (1..1)
+  * recipient (0..1)
+    * identifier (1..1)
+      * system (1..1)
+        * possible values:
+          * http://hl7.org/fhir/sid/us-npi
+      * value (1..1)
+  * requester (0..1)
+    * agent (1..1)
+      * identifier (1..1)
+        * system (1..1)
+          * possible values:
+            * http://hl7.org/fhir/sid/us-npi
+        * value (1..1)
+  * resourceType (1..1)
+  * status (1..1)
+  * subject (0..1)
+    * reference (1..1)
+  * valueQuantity (0..1)
+    * value (1..1)
+* diagnosis (0..13)
+  * diagnosisCodeableConcept (1..1)
+    * coding (1..1)
+      * code (1..1)
+      * system (1..1)
+        * possible values:
+          * http://hl7.org/fhir/sid/icd-9-cm
+          * http://hl7.org/fhir/sid/icd-10
+  * sequence (1..1)
+  * type (0..1)
+    * coding (1..1)
+      * code (1..1)
+        * possible values:
+          * principal
+      * display (1..1)
+      * system (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/codesystem/diagnosis-type
+* extension (9..10)
+  * url (1..1)
+    * possible values:
+      * https://bluebutton.cms.gov/resources/variables/prpayamt
+      * https://bluebutton.cms.gov/resources/variables/carr_num
+      * https://bluebutton.cms.gov/resources/variables/carr_clm_pmt_dnl_cd
+      * https://bluebutton.cms.gov/resources/variables/asgmntcd
+      * https://bluebutton.cms.gov/resources/variables/carr_clm_cash_ddctbl_apld_amt
+      * https://bluebutton.cms.gov/resources/variables/nch_clm_prvdr_pmt_amt
+      * https://bluebutton.cms.gov/resources/variables/nch_clm_bene_pmt_amt
+      * https://bluebutton.cms.gov/resources/variables/nch_carr_clm_sbmtd_chrg_amt
+      * https://bluebutton.cms.gov/resources/variables/nch_carr_clm_alowd_amt
+      * https://bluebutton.cms.gov/resources/variables/clm_clncl_tril_num
+  * valueCoding (0..1)
+    * code (1..1)
+      * possible values:
+        * 1
+        * A
+        * 0
+        * N
+    * display (1..1)
+    * system (1..1)
+      * possible values:
+        * https://bluebutton.cms.gov/resources/variables/carr_clm_pmt_dnl_cd
+        * https://bluebutton.cms.gov/resources/variables/asgmntcd
+  * valueIdentifier (0..1)
+    * system (1..1)
+      * possible values:
+        * https://bluebutton.cms.gov/resources/variables/carr_num
+        * https://bluebutton.cms.gov/resources/variables/clm_clncl_tril_num
+    * value (1..1)
+  * valueMoney (0..1)
+    * code (1..1)
+      * possible values:
+        * USD
+    * system (1..1)
+      * possible values:
+        * urn:iso:std:iso:4217
+    * value (1..1)
+* id (1..1)
+* identifier (2..2)
+  * system (1..1)
+    * possible values:
+      * https://bluebutton.cms.gov/resources/variables/clm_id
+      * https://bluebutton.cms.gov/resources/identifier/claim-group
+  * value (1..1)
+* insurance (1..1)
+  * coverage (1..1)
+    * reference (1..1)
+* item (1..13)
+  * adjudication (10..10)
+    * amount (0..1)
+      * code (1..1)
+        * possible values:
+          * USD
+      * system (1..1)
+        * possible values:
+          * urn:iso:std:iso:4217
+      * value (1..1)
+    * category (1..1)
+      * coding (1..1)
+        * code (1..1)
+          * possible values:
+            * https://bluebutton.cms.gov/resources/variables/carr_line_rdcd_pmt_phys_astn_c
+            * https://bluebutton.cms.gov/resources/variables/line_nch_pmt_amt
+            * https://bluebutton.cms.gov/resources/variables/line_bene_pmt_amt
+            * https://bluebutton.cms.gov/resources/variables/line_prvdr_pmt_amt
+            * https://bluebutton.cms.gov/resources/variables/line_bene_ptb_ddctbl_amt
+            * https://bluebutton.cms.gov/resources/variables/line_bene_prmry_pyr_pd_amt
+            * https://bluebutton.cms.gov/resources/variables/line_coinsrnc_amt
+            * https://bluebutton.cms.gov/resources/variables/line_sbmtd_chrg_amt
+            * https://bluebutton.cms.gov/resources/variables/line_alowd_chrg_amt
+            * https://bluebutton.cms.gov/resources/variables/line_prcsg_ind_cd
+        * display (1..1)
+        * system (1..1)
+          * possible values:
+            * https://bluebutton.cms.gov/resources/codesystem/adjudication
+    * extension (0..1)
+      * url (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/variables/line_pmt_80_100_cd
+      * valueCoding (1..1)
+        * code (1..1)
+          * possible values:
+            * 0
+            * 1
+        * display (1..1)
+        * system (1..1)
+          * possible values:
+            * https://bluebutton.cms.gov/resources/variables/line_pmt_80_100_cd
+    * reason (0..1)
+      * coding (1..1)
+        * code (1..1)
+        * display (0..1)
+        * system (1..1)
+          * possible values:
+            * https://bluebutton.cms.gov/resources/variables/carr_line_rdcd_pmt_phys_astn_c
+            * https://bluebutton.cms.gov/resources/variables/line_prcsg_ind_cd
+  * careTeamLinkId (0..1)
+  * category (1..1)
+    * coding (1..1)
+      * code (1..1)
+      * display (1..1)
+      * system (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/variables/line_cms_type_srvc_cd
+  * diagnosisLinkId (0..1)
+  * extension (3..5)
+    * url (1..1)
+      * possible values:
+        * https://bluebutton.cms.gov/resources/variables/carr_line_mtus_cd
+        * https://bluebutton.cms.gov/resources/variables/carr_line_mtus_cnt
+        * https://bluebutton.cms.gov/resources/variables/betos_cd
+        * https://bluebutton.cms.gov/resources/variables/line_service_deductible
+        * https://bluebutton.cms.gov/resources/variables/line_hct_hgb_rslt_num
+    * valueCoding (0..1)
+      * code (1..1)
+      * display (1..1)
+      * system (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/variables/carr_line_mtus_cd
+          * https://bluebutton.cms.gov/resources/variables/betos_cd
+          * https://bluebutton.cms.gov/resources/variables/line_service_deductible
+    * valueQuantity (0..1)
+      * value (1..1)
+    * valueReference (0..1)
+      * reference (1..1)
+  * locationCodeableConcept (1..1)
+    * coding (1..1)
+      * code (1..1)
+        * possible values:
+          * 99
+      * display (1..1)
+      * system (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/variables/line_place_of_srvc_cd
+    * extension (2..4)
+      * url (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/variables/prvdr_state_cd
+          * https://bluebutton.cms.gov/resources/variables/prvdr_zip
+          * https://bluebutton.cms.gov/resources/variables/carr_line_prcng_lclty_cd
+          * https://bluebutton.cms.gov/resources/variables/carr_line_clia_lab_num
+      * valueCoding (0..1)
+        * code (1..1)
+          * possible values:
+            * 99
+            * 999999999
+        * display (0..1)
+        * system (1..1)
+          * possible values:
+            * https://bluebutton.cms.gov/resources/variables/prvdr_state_cd
+            * https://bluebutton.cms.gov/resources/variables/prvdr_zip
+            * https://bluebutton.cms.gov/resources/variables/carr_line_prcng_lclty_cd
+      * valueIdentifier (0..1)
+        * system (1..1)
+          * possible values:
+            * https://bluebutton.cms.gov/resources/variables/carr_line_clia_lab_num
+        * value (1..1)
+  * modifier (0..2)
+    * coding (1..1)
+      * code (1..1)
+        * possible values:
+          * 99999
+      * system (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/codesystem/hcpcs
+      * version (1..1)
+  * quantity (1..1)
+    * value (1..1)
+  * sequence (1..1)
+  * service (1..1)
+    * coding (1..1)
+      * code (1..1)
+      * system (1..1)
+        * possible values:
+          * https://bluebutton.cms.gov/resources/codesystem/hcpcs
+      * version (1..1)
+  * servicedPeriod (1..1)
+    * end (1..1)
+    * start (1..1)
+* patient (1..1)
+  * reference (1..1)
+* payment (1..1)
+  * amount (1..1)
+    * code (1..1)
+      * possible values:
+        * USD
+    * system (1..1)
+      * possible values:
+        * urn:iso:std:iso:4217
+    * value (1..1)
+* referral (0..1)
+  * reference (1..1)
+* resourceType (1..1)
+* status (1..1)
+* type (1..1)
+  * coding (4..4)
+    * code (1..1)
+      * possible values:
+        * 72
+        * CARRIER
+        * professional
+        * O
+        * 71
+    * display (0..1)
+    * system (1..1)
+      * possible values:
+        * https://bluebutton.cms.gov/resources/variables/nch_clm_type_cd
+        * https://bluebutton.cms.gov/resources/codesystem/eob-type
+        * http://hl7.org/fhir/ex-claimtype
+        * https://bluebutton.cms.gov/resources/variables/nch_near_line_rec_ident_cd
